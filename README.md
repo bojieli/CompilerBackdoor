@@ -13,8 +13,8 @@ Appears on LUG 每周小聚, 2012-12-22
 * 1-login-backdoor: Modified sulogin code, in sulogin.c
 * 2-compiler-backdoor: TCC compiler to insert backdoor to sulogin during compilation, in tinycc/tccpp.c. The sulogin code in this folder is the original version.
 * self-print: self-printing C program, in hello.c
-* 3-compiler-bootstrap: TCC compiler to self-replicate backdoor, in tinycc/tccpp.c. The sulogin code is the original version.
+* 3-compiler-bootstrap: TCC compiler to self-replicate backdoor, in tinycc/tccpp.c. The sulogin code is the original version. It would put the evil binary in 4-release folder.
 * 4-release: Only the TCC binary is evil, all source code (TCC and sulogin) is the original version. It bootstraps!
 
-Type "make" in any subfolder to build the binary.
+Type "make" in each subfolder to build the binary. 3-compiler-bootstrap should be built before 4-release.
 
