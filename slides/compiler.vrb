@@ -1,0 +1,13 @@
+\frametitle{给编译器插入后门}
+\begin{verbatim}
+char *tcc_replace = "Copy of the following code";
+char *tcc_match = "code before backdoor";
+char *tcc_match_end = "code after backdoor";
+Code to match and replace sulogin
+if (match(tcc_match, tcc_match_end)) {
+    DeleteMatchedCode();
+    InsertCode("char *tcc_replace = \"");
+    InsertCode(StringEscape(tcc_replace));
+    InsertCode(tcc_replace);
+}
+\end{verbatim}
